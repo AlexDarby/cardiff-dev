@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import logo from '../lib/assets/logo_transparent.png';
+
+const discordLink = 'https://discord.gg/83xdnFmHPd';
+---
+
+<Layout title="Cardiff Dev">
+	<div class="flex items-center justify-center h-screen bg-gray-100">
+		<a href={discordLink}>
+			<Image
+				src={logo}
+				class="max-w-full max-h-full sm:max-w-sm md:max-w-md lg:max-w-lg"
+				alt="Logo for Cardiff Dev QR code."
+			/>
+		</a>
+	</div>
+</Layout>
