@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" href="/logo_icon_chosen.png"><title>Cardiff Dev</title><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Doto:ROND,wght@0,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet"><!-- Dark mode init — must run before paint to prevent flash --><script>
+			(function () {
+				const saved = localStorage.getItem('cardiff-theme');
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (saved === 'dark' || (!saved && prefersDark)) {
+					document.documentElement.classList.add('dark');
+				}
+			})();
+		</script><link rel="stylesheet" href="/_astro/index.ClcEevL6.css"></head> <body> <!-- Theme toggle --> <button id="theme-toggle" onclick="cardiffToggleTheme()" aria-label="Toggle colour scheme" class="fixed top-4 right-5 text-xs font-mono z-50 px-2 py-1 border transition-colors duration-150" style="color:var(--muted);border-color:var(--border);background:var(--bg);">
+[<span id="theme-label"></span>]
+</button>  <main class="min-h-screen py-20 px-6"> <div class="max-w-xl mx-auto space-y-16"> <header> <p class="font-display text-sm mb-3" style="color:var(--accent)">$ ./cardiff.dev</p> <h1 class="font-display text-3xl mb-5" style="color:var(--fg)">Cardiff Dev</h1> <p class="text-sm leading-7" style="color:var(--muted)">
+A community for developers in and around Cardiff, Wales.
+					We meet monthly, talk about technology, and build things together.
+					Whether you're shipping production code or writing your first loop —
+					you're welcome here.
+</p> </header> <section> <p class="text-sm mb-4" style="color:var(--accent-2)">&gt; events</p> <div class="pl-4 border-l space-y-1" style="border-color:var(--border)"> <p class="text-sm" style="color:var(--fg)">Monthly meetup</p> <p class="text-sm" style="color:var(--muted)">1st Tuesday · Cardiff · doors 6:30pm, start 7pm</p> <a href="https://discord.gg/83xdnFmHPd" class="inline-block pt-3 text-xs transition-opacity duration-150 hover:opacity-60" style="color:var(--muted)">
+→ join Discord for venue &amp; updates
+</a> </div> </section> <section> <p class="text-sm mb-4" style="color:var(--accent-2)">&gt; topics</p> <div class="pl-4 border-l" style="border-color:var(--border)"> <p class="text-sm leading-7" style="color:var(--muted)">
+Web, systems, mobile, DevOps, AI/ML, open source,
+						career advice, side projects, and the eternal
+						tabs&#8202;vs&#8202;spaces debate.
+</p> <p class="text-xs mt-2 opacity-50" style="color:var(--muted)">// all stacks. all levels. no gatekeeping.</p> </div> </section> <section> <p class="text-sm mb-4" style="color:var(--accent-2)">&gt; find_us</p> <div class="pl-4 border-l flex flex-wrap gap-x-6 gap-y-2" style="border-color:var(--border)"> <a href="https://discord.gg/83xdnFmHPd" class="text-sm transition-opacity duration-150 hover:opacity-60" style="color:var(--muted)">Discord ↗</a> <a href="https://bsky.app/profile/cardiff.dev" class="text-sm transition-opacity duration-150 hover:opacity-60" style="color:var(--muted)">Bluesky ↗</a> <a href="https://reddit.com/r/Cardiff" class="text-sm transition-opacity duration-150 hover:opacity-60" style="color:var(--muted)">Reddit ↗</a> </div> </section> <footer class="pt-8 border-t" style="border-color:var(--border)"> <p class="text-xs opacity-30" style="color:var(--fg)">cardiff.dev · made in wales</p> </footer> </div> </main>  <script>
+			// Set initial label
+			(function () {
+				const label = document.getElementById('theme-label');
+				if (label) {
+					label.textContent = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+				}
+			})();
+
+			function cardiffToggleTheme() {
+				const isDark = document.documentElement.classList.toggle('dark');
+				localStorage.setItem('cardiff-theme', isDark ? 'dark' : 'light');
+				const label = document.getElementById('theme-label');
+				if (label) label.textContent = isDark ? 'light' : 'dark';
+			}
+		</script> </body> </html>
