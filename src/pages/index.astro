@@ -1,19 +1,98 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import logo from '../lib/assets/logo_transparent.png';
-
-const discordLink = 'https://discord.gg/83xdnFmHPd';
 ---
 
-<Layout title="Cardiff Dev">
-	<div class="flex items-center justify-center h-screen bg-gray-100">
-		<a href={discordLink}>
-			<Image
-				src={logo}
-				class="max-w-full max-h-full sm:max-w-sm md:max-w-md lg:max-w-lg"
-				alt="Logo for Cardiff Dev QR code."
-			/>
-		</a>
-	</div>
+<Layout>
+	<main class="min-h-screen py-20 px-6">
+		<div class="max-w-xl mx-auto space-y-16">
+
+			<header>
+				<p class="text-sm mb-3" style="color:var(--accent)">$ ./cardiff.dev</p>
+				<h1 class="font-display text-3xl mb-6 text-center">
+					<a href="https://discord.gg/83xdnFmHPd" class="transition-opacity duration-150 hover:opacity-70" style="color:var(--fg)">Cardiff Dev</a>
+				</h1>
+				<div class="flex justify-center mb-6">
+					<img
+						src="/new-icon-dragon-border.png"
+						alt="Cardiff Dev pixel art dragon"
+						width="120"
+						height="120"
+						style="image-rendering: pixelated;"
+					/>
+				</div>
+				<p class="text-sm leading-7" style="color:var(--muted)">
+					A community for tech enthusiasts, hobbyists, students, and professional 
+					developers in and around Cardiff, Wales.
+					We meet monthly, talk about technology, and build things together.
+					Whether you're shipping production code or writing your first loop —
+					<span style="color:var(--accent)">you're welcome here.</span>
+				</p>
+			</header>
+
+			<section>
+				<p class="text-sm mb-4" style="color:var(--accent-2)">&gt; events</p>
+				<div class="pl-4 border-l space-y-1" style="border-color:var(--border)">
+					<p class="text-sm" style="color:var(--accent)">Monthly meetup</p>
+					<p class="text-sm" style="color:var(--muted)">
+						1st Tuesday ·
+						<a
+							href="https://www.google.com/maps/search/Tiny+Rebel,+25+Westgate+Street,+Cardiff+CF10+1DD"
+							target="_blank"
+							rel="noreferrer"
+							class="transition-opacity duration-150 hover:opacity-60"
+							style="color:var(--muted)"
+						>Tiny Rebel ↗</a>
+						· Cardiff · 17:30 onwards
+					</p>
+					<div class="flex flex-wrap gap-x-4 gap-y-1 pt-2">
+						<a
+							href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cardiff+Dev+Monthly+Meetup&dates=20260602T163000Z/20260602T200000Z&recur=RRULE%3AFREQ%3DMONTHLY%3BBYDAY%3D1TU&location=Tiny+Rebel%2C+25+Westgate+Street%2C+Cardiff+CF10+1DD&details=Monthly+developer+meetup.+Join+Discord%3A+https%3A%2F%2Fdiscord.gg%2F83xdnFmHPd"
+							target="_blank"
+							rel="noreferrer"
+							class="text-xs transition-opacity duration-150 hover:opacity-60"
+							style="color:var(--accent)"
+						>[ + Google Calendar ]</a>
+						<a
+							href="/cardiff-dev-meetup.ics"
+							download
+							class="text-xs transition-opacity duration-150 hover:opacity-60"
+							style="color:var(--accent)"
+						>[ + Apple / iCal ]</a>
+					</div>
+					<a
+						href="https://discord.gg/83xdnFmHPd"
+						class="inline-block pt-1 text-xs transition-opacity duration-150 hover:opacity-60"
+						style="color:var(--muted)"
+					>
+						→ join Discord for updates
+					</a>
+				</div>
+			</section>
+
+			<section>
+				<p class="text-sm mb-4" style="color:var(--accent-2)">&gt; topics</p>
+				<div class="pl-4 border-l" style="border-color:var(--border)">
+					<p class="text-sm leading-7" style="color:var(--muted)">
+						Web, systems, mobile, DevOps, AI/ML, open source,
+						career advice, side projects, nonsense.
+					</p>
+					<p class="text-xs mt-2 opacity-50" style="color:var(--muted)">// all stacks. all levels. no gatekeeping.</p>
+				</div>
+			</section>
+
+			<section>
+				<p class="text-sm mb-4" style="color:var(--accent-2)">&gt; find_us</p>
+				<div class="pl-4 border-l flex flex-wrap gap-x-6 gap-y-2" style="border-color:var(--border)">
+					<a href="https://discord.gg/83xdnFmHPd" class="text-sm transition-opacity duration-150 hover:opacity-60" style="color:var(--muted)">Discord ↗</a>
+					<a href="https://bsky.app/profile/cardiff.dev" class="text-sm transition-opacity duration-150 hover:opacity-60" style="color:var(--muted)">Bluesky ↗</a>
+					<a href="https://x.com/cardiff_dev" class="text-sm transition-opacity duration-150 hover:opacity-60" style="color:var(--muted)">Twitter/X ↗</a>
+				</div>
+			</section>
+
+			<footer class="pt-8 border-t" style="border-color:var(--border)">
+				<p class="text-xs opacity-30" style="color:var(--fg)">cardiff.dev · made in wales</p>
+			</footer>
+
+		</div>
+	</main>
 </Layout>
