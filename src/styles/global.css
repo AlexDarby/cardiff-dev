@@ -4,21 +4,23 @@
 
 /* ── Theme tokens ─────────────────────────────────── */
 :root {
-	--bg:      #f5f4ef;
-	--fg:      #1a1a1a;
-	--accent:  #15803d;
-	--muted:   #71717a;
-	--border:  #d4d4d8;
-	--surface: #eeede8;
+	--bg:       #f5f4ef;
+	--fg:       #1a1a1a;
+	--accent:   #067055;  /* #00ffba darkened for light bg */
+	--accent-2: #b54040;  /* #d65a5a darkened for light bg */
+	--muted:    #71717a;
+	--border:   #d4d4d8;
+	--surface:  #eeede8;
 }
 
 html.dark {
-	--bg:      #0d0d0d;
-	--fg:      #d4d4d4;
-	--accent:  #4ade80;
-	--muted:   #71717a;
-	--border:  #27272a;
-	--surface: #171717;
+	--bg:       #0d0d0d;
+	--fg:       #d4d4d4;
+	--accent:   #00ffba;
+	--accent-2: #d65a5a;
+	--muted:    #71717a;
+	--border:   #27272a;
+	--surface:  #171717;
 }
 
 /* ── Base ─────────────────────────────────────────── */

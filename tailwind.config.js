@@ -10,6 +10,7 @@ export default {
 			},
 			colors: {
 				accent: 'var(--accent)',
+				'accent-2': 'var(--accent-2)',
 				muted: 'var(--muted)',
 				'site-border': 'var(--border)',
 				'site-surface': 'var(--surface)',

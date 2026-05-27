@@ -14,7 +14,7 @@ import Layout from '../layouts/Layout.astro';
 
 			<!-- Typography -->
 			<section>
-				<p class="font-display text-sm mb-6" style="color:var(--accent)">&gt; typography</p>
+				<p class="text-sm mb-6" style="color:var(--accent-2)">&gt; typography</p>
 
 				<div class="pl-4 border-l space-y-8" style="border-color:var(--border)">
 					<div>
@@ -36,19 +36,20 @@ import Layout from '../layouts/Layout.astro';
 
 			<!-- Colours -->
 			<section>
-				<p class="font-display text-sm mb-6" style="color:var(--accent)">&gt; colours</p>
+				<p class="text-sm mb-6" style="color:var(--accent-2)">&gt; colours</p>
 
 				<div class="pl-4 border-l space-y-3" style="border-color:var(--border)">
 					<p class="text-xs opacity-50 mb-4" style="color:var(--muted)">// swatches adapt to active theme</p>
 
 					{[
-						{ token: '--bg',      label: 'bg',      dark: '#0d0d0d', light: '#f5f4ef' },
-						{ token: '--fg',      label: 'fg',      dark: '#d4d4d4', light: '#1a1a1a' },
-						{ token: '--accent',  label: 'accent',  dark: '#4ade80', light: '#15803d' },
-						{ token: '--muted',   label: 'muted',   dark: '#71717a', light: '#71717a' },
-						{ token: '--border',  label: 'border',  dark: '#27272a', light: '#d4d4d8' },
-						{ token: '--surface', label: 'surface', dark: '#171717', light: '#eeede8' },
-					].map(({ token, label, dark, light }) => (
+						{ token: '--bg',       dark: '#0d0d0d', light: '#f5f4ef' },
+						{ token: '--fg',       dark: '#d4d4d4', light: '#1a1a1a' },
+						{ token: '--accent',   dark: '#00ffba', light: '#067055' },
+						{ token: '--accent-2', dark: '#d65a5a', light: '#b54040' },
+						{ token: '--muted',    dark: '#71717a', light: '#71717a' },
+						{ token: '--border',   dark: '#27272a', light: '#d4d4d8' },
+						{ token: '--surface',  dark: '#171717', light: '#eeede8' },
+					].map(({ token, dark, light }) => (
 						<div class="flex items-center gap-4 text-sm">
 							<div
 								class="w-8 h-5 rounded-sm border flex-shrink-0"
@@ -66,14 +67,14 @@ import Layout from '../layouts/Layout.astro';
 
 			<!-- Components -->
 			<section>
-				<p class="font-display text-sm mb-6" style="color:var(--accent)">&gt; components</p>
+				<p class="text-sm mb-6" style="color:var(--accent-2)">&gt; components</p>
 
 				<div class="pl-4 border-l space-y-6" style="border-color:var(--border)">
 
 					<div class="space-y-1">
 						<p class="text-xs opacity-50 mb-2" style="color:var(--muted)">// prompts &amp; section labels</p>
 						<p class="font-display text-sm" style="color:var(--accent)">$ command-style-prompt</p>
-						<p class="font-display text-sm" style="color:var(--accent)">&gt; section_header</p>
+						<p class="text-sm" style="color:var(--accent-2)">&gt; section_header</p>
 					</div>
 
 					<div class="space-y-1">
@@ -110,7 +111,7 @@ import Layout from '../layouts/Layout.astro';
 
 			<!-- ASCII Icons -->
 			<section>
-				<p class="font-display text-sm mb-6" style="color:var(--accent)">&gt; ascii_icons</p>
+				<p class="text-sm mb-6" style="color:var(--accent-2)">&gt; ascii_icons</p>
 
 				<div class="pl-4 border-l" style="border-color:var(--border)">
 					<p class="text-xs opacity-50 mb-4" style="color:var(--muted)">// used in bluesky comment thread</p>
