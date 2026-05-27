@@ -9,8 +9,55 @@ import '../styles/global.css';
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" href="/logo_icon_chosen.png" />
 		<title>Cardiff Dev</title>
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Doto:ROND,wght@0,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Dark mode init — must run before paint to prevent flash -->
+		<script is:inline>
+			(function () {
+				const saved = localStorage.getItem('cardiff-theme');
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (saved === 'dark' || (!saved && prefersDark)) {
+					document.documentElement.classList.add('dark');
+				}
+			})();
+		</script>
 	</head>
 	<body>
+		<!-- Theme toggle -->
+		<button
+			id="theme-toggle"
+			onclick="cardiffToggleTheme()"
+			aria-label="Toggle colour scheme"
+			class="fixed top-4 right-5 text-xs font-mono z-50 px-2 py-1 border transition-colors duration-150"
+			style="color:var(--muted);border-color:var(--border);background:var(--bg);"
+		>
+			[<span id="theme-label"></span>]
+		</button>
+
 		<slot />
+
+		<script is:inline>
+			// Set initial label
+			(function () {
+				const label = document.getElementById('theme-label');
+				if (label) {
+					label.textContent = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+				}
+			})();
+
+			function cardiffToggleTheme() {
+				const isDark = document.documentElement.classList.toggle('dark');
+				localStorage.setItem('cardiff-theme', isDark ? 'dark' : 'light');
+				const label = document.getElementById('theme-label');
+				if (label) label.textContent = isDark ? 'light' : 'dark';
+			}
+		</script>
 	</body>
 </html>

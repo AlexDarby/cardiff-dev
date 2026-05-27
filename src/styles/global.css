@@ -2,8 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Theme tokens ─────────────────────────────────── */
+:root {
+	--bg:      #f5f4ef;
+	--fg:      #1a1a1a;
+	--accent:  #15803d;
+	--muted:   #71717a;
+	--border:  #d4d4d8;
+	--surface: #eeede8;
+}
+
+html.dark {
+	--bg:      #0d0d0d;
+	--fg:      #d4d4d4;
+	--accent:  #4ade80;
+	--muted:   #71717a;
+	--border:  #27272a;
+	--surface: #171717;
+}
+
+/* ── Base ─────────────────────────────────────────── */
 @layer base {
-  body {
-    @apply font-mono bg-zinc-950 text-zinc-300;
-  }
+	body {
+		@apply font-mono;
+		background-color: var(--bg);
+		color: var(--fg);
+		transition: background-color 0.2s ease, color 0.2s ease;
+	}
+
+	a {
+		color: inherit;
+	}
 }

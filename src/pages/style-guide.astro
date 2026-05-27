@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<main class="min-h-screen py-20 px-6">
+		<div class="max-w-xl mx-auto space-y-16">
+
+			<header>
+				<p class="font-display text-sm mb-3" style="color:var(--accent)">$ ./style-guide.sh</p>
+				<h1 class="font-display text-2xl mb-5" style="color:var(--fg)">Cardiff Dev</h1>
+				<p class="text-sm" style="color:var(--muted)">Design system reference.</p>
+			</header>
+
+			<!-- Typography -->
+			<section>
+				<p class="font-display text-sm mb-6" style="color:var(--accent)">&gt; typography</p>
+
+				<div class="pl-4 border-l space-y-8" style="border-color:var(--border)">
+					<div>
+						<p class="text-xs mb-3 opacity-50" style="color:var(--muted)">// display — Doto — headings, section labels, prompts</p>
+						<p class="font-display text-3xl" style="color:var(--fg)">Cardiff Dev</p>
+						<p class="font-display text-xl mt-1" style="color:var(--accent)">$ ./cardiff.dev</p>
+						<p class="font-display text-base mt-1" style="color:var(--accent)">&gt; section_label</p>
+						<p class="font-display text-sm mt-1" style="color:var(--muted)">Small display / metadata</p>
+					</div>
+
+					<div>
+						<p class="text-xs mb-3 opacity-50" style="color:var(--muted)">// body — JetBrains Mono — paragraphs, links, UI text</p>
+						<p class="text-base leading-7" style="color:var(--fg)">Regular body copy. We meet monthly, talk about technology, and build things together.</p>
+						<p class="text-sm leading-7 mt-2" style="color:var(--muted)">Secondary / muted text for supporting information and metadata.</p>
+						<p class="text-xs mt-2 opacity-50" style="color:var(--muted)">// comment-style annotation — xs, low opacity</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Colours -->
+			<section>
+				<p class="font-display text-sm mb-6" style="color:var(--accent)">&gt; colours</p>
+
+				<div class="pl-4 border-l space-y-3" style="border-color:var(--border)">
+					<p class="text-xs opacity-50 mb-4" style="color:var(--muted)">// swatches adapt to active theme</p>
+
+					{[
+						{ token: '--bg',      label: 'bg',      dark: '#0d0d0d', light: '#f5f4ef' },
+						{ token: '--fg',      label: 'fg',      dark: '#d4d4d4', light: '#1a1a1a' },
+						{ token: '--accent',  label: 'accent',  dark: '#4ade80', light: '#15803d' },
+						{ token: '--muted',   label: 'muted',   dark: '#71717a', light: '#71717a' },
+						{ token: '--border',  label: 'border',  dark: '#27272a', light: '#d4d4d8' },
+						{ token: '--surface', label: 'surface', dark: '#171717', light: '#eeede8' },
+					].map(({ token, label, dark, light }) => (
+						<div class="flex items-center gap-4 text-sm">
+							<div
+								class="w-8 h-5 rounded-sm border flex-shrink-0"
+								style={`background:var(${token});border-color:var(--border)`}
+							></div>
+							<span class="font-display" style="color:var(--fg)">{token}</span>
+							<span style="color:var(--muted)" class="text-xs">
+								<span class="dark-val">{dark}</span>
+								<span class="light-val">{light}</span>
+							</span>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<!-- Components -->
+			<section>
+				<p class="font-display text-sm mb-6" style="color:var(--accent)">&gt; components</p>
+
+				<div class="pl-4 border-l space-y-6" style="border-color:var(--border)">
+
+					<div class="space-y-1">
+						<p class="text-xs opacity-50 mb-2" style="color:var(--muted)">// prompts &amp; section labels</p>
+						<p class="font-display text-sm" style="color:var(--accent)">$ command-style-prompt</p>
+						<p class="font-display text-sm" style="color:var(--accent)">&gt; section_header</p>
+					</div>
+
+					<div class="space-y-1">
+						<p class="text-xs opacity-50 mb-2" style="color:var(--muted)">// links</p>
+						<div class="flex gap-6">
+							<a href="#" class="text-sm transition-opacity hover:opacity-60" style="color:var(--muted)">Discord ↗</a>
+							<a href="#" class="text-sm transition-opacity hover:opacity-60" style="color:var(--muted)">Bluesky ↗</a>
+							<a href="#" class="text-sm transition-opacity hover:opacity-60" style="color:var(--muted)">Reddit ↗</a>
+						</div>
+					</div>
+
+					<div class="space-y-2">
+						<p class="text-xs opacity-50 mb-2" style="color:var(--muted)">// ctas</p>
+						<div>
+							<a href="#" class="text-xs transition-opacity hover:opacity-60" style="color:var(--accent)">[+ reply on bluesky]</a>
+						</div>
+						<div>
+							<a href="#" class="text-xs transition-opacity hover:opacity-60" style="color:var(--muted)">→ join Discord for venue &amp; updates</a>
+						</div>
+					</div>
+
+					<div>
+						<p class="text-xs opacity-50 mb-2" style="color:var(--muted)">// theme toggle</p>
+						<button
+							class="text-xs px-2 py-1 border transition-colors"
+							style="color:var(--muted);border-color:var(--border);background:var(--surface)"
+						>
+							[dark]
+						</button>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- ASCII Icons -->
+			<section>
+				<p class="font-display text-sm mb-6" style="color:var(--accent)">&gt; ascii_icons</p>
+
+				<div class="pl-4 border-l" style="border-color:var(--border)">
+					<p class="text-xs opacity-50 mb-4" style="color:var(--muted)">// used in bluesky comment thread</p>
+					<table class="text-sm border-separate" style="border-spacing: 0 0.5rem">
+						<tbody>
+							{[
+								{ icon: '[>]', use: 'replies / comments' },
+								{ icon: '<3',  use: 'likes'              },
+								{ icon: '<>',  use: 'reposts'            },
+								{ icon: '//',  use: 'annotation / comment text' },
+								{ icon: '→',   use: 'inline cta / nav'  },
+								{ icon: '↗',   use: 'external link'     },
+							].map(({ icon, use }) => (
+								<tr>
+									<td class="pr-6 font-display" style="color:var(--accent)">{icon}</td>
+									<td style="color:var(--muted)">{use}</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<footer class="pt-8 border-t" style="border-color:var(--border)">
+				<a href="/" class="text-xs opacity-40 hover:opacity-70 transition-opacity" style="color:var(--fg)">← back to cardiff.dev</a>
+			</footer>
+
+		</div>
+	</main>
+</Layout>
+
+<style>
+	/* Show correct hex value for active theme */
+	:global(html:not(.dark)) .dark-val  { display: none; }
+	:global(html.dark)       .light-val { display: none; }
+</style>
