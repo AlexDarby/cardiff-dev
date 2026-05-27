@@ -1,19 +1,72 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import logo from '../lib/assets/logo_transparent.png';
-
-const discordLink = 'https://discord.gg/83xdnFmHPd';
+import { BlueskyComments } from 'bsky-comments-svelte';
 ---
 
-<Layout title="Cardiff Dev">
-	<div class="flex items-center justify-center h-screen bg-gray-100">
-		<a href={discordLink}>
-			<Image
-				src={logo}
-				class="max-w-full max-h-full sm:max-w-sm md:max-w-md lg:max-w-lg"
-				alt="Logo for Cardiff Dev QR code."
-			/>
-		</a>
-	</div>
+<Layout>
+	<main class="min-h-screen py-20 px-6">
+		<div class="max-w-xl mx-auto space-y-16">
+
+			<header>
+				<p class="text-green-400 text-sm mb-3">$ ./cardiff.dev</p>
+				<h1 class="text-lg text-white mb-5">Cardiff Dev</h1>
+				<p class="text-zinc-400 text-sm leading-7">
+					A community for developers in and around Cardiff, Wales.
+					We meet monthly, talk about technology, and build things together.
+					Whether you're shipping production code or writing your first loop —
+					you're welcome here.
+				</p>
+			</header>
+
+			<section>
+				<p class="text-green-400 text-sm mb-4">&gt; events</p>
+				<div class="pl-4 border-l border-zinc-800 space-y-1">
+					<p class="text-white text-sm">Monthly meetup</p>
+					<p class="text-zinc-500 text-sm">1st Tuesday · Cardiff · doors 6:30pm, start 7pm</p>
+					<a
+						href="https://discord.gg/83xdnFmHPd"
+						class="inline-block pt-3 text-xs text-zinc-600 hover:text-green-400 transition-colors duration-150"
+					>
+						→ join Discord for venue &amp; updates
+					</a>
+				</div>
+			</section>
+
+			<section>
+				<p class="text-green-400 text-sm mb-4">&gt; topics</p>
+				<div class="pl-4 border-l border-zinc-800">
+					<p class="text-zinc-400 text-sm leading-7">
+						Web, systems, mobile, DevOps, AI/ML, open source,
+						career advice, side projects, and the eternal
+						tabs&#8202;vs&#8202;spaces debate.
+					</p>
+					<p class="text-zinc-700 text-sm mt-2">// all stacks. all levels. no gatekeeping.</p>
+				</div>
+			</section>
+
+			<section>
+				<p class="text-green-400 text-sm mb-4">&gt; find_us</p>
+				<div class="pl-4 border-l border-zinc-800 flex flex-wrap gap-x-6 gap-y-2">
+					<a href="https://discord.gg/83xdnFmHPd" class="text-sm text-zinc-400 hover:text-white transition-colors duration-150">Discord ↗</a>
+					<a href="https://bsky.app/profile/cardiff.dev" class="text-sm text-zinc-400 hover:text-white transition-colors duration-150">Bluesky ↗</a>
+					<a href="https://reddit.com/r/Cardiff" class="text-sm text-zinc-400 hover:text-white transition-colors duration-150">Reddit ↗</a>
+				</div>
+			</section>
+
+			<section>
+				<p class="text-green-400 text-sm mb-4">&gt; comments</p>
+				<div class="pl-4 border-l border-zinc-800">
+					<BlueskyComments
+						uri="https://bsky.app/profile/cardiff.dev/post/3lc43kdf2ws2e"
+						client:load
+					/>
+				</div>
+			</section>
+
+			<footer class="border-t border-zinc-900 pt-8">
+				<p class="text-zinc-800 text-xs">cardiff.dev · made in wales</p>
+			</footer>
+
+		</div>
+	</main>
 </Layout>
