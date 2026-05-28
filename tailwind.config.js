@@ -6,7 +6,7 @@ export default {
 		extend: {
 			fontFamily: {
 				mono: ['"JetBrains Mono"', 'ui-monospace', 'Menlo', 'Consolas', 'monospace'],
-				display: ['"Doto"', 'monospace'],
+				display: ['"Pixelify Sans"', 'monospace'],
 			},
 			colors: {
 				accent: 'var(--accent)',
